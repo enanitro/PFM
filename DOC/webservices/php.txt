@@ -1,0 +1,11 @@
+http://www.raywenderlich.com/2941/how-to-write-a-simple-phpmysql-web-service-for-an-ios-app
+
+http://davidwalsh.name/web-service-php-mysql-xml-json
+
+http://www.islavisual.com/articulos/desarrollo_web/crear-un-web-service-con-php-y-mysql-introduccion.php
+http://www.islavisual.com/articulos/desarrollo_web/crear-un-web-service-con-php-y-mysql-primeros-pasos-mi-primer-web-service.php
+http://www.islavisual.com/articulos/desarrollo_web/clase-en-php-para-mysql-de-islavisual.php
+
+http://www.codeproject.com/Articles/267023/Send-and-receive-json-between-android-and-php
+
+http://pabloyac.com/?p=18 *****
