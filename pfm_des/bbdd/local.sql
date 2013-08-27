@@ -59,39 +59,6 @@ INSERT INTO `local` (`nombre`, `direccion`, `logo`, `portada`, `latitud`, `longi
 
 
 
---
--- Table structure for table `evento`
---
-
-DROP TABLE IF EXISTS `evento`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `evento` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(50) NOT NULL,
-  `local_id` int(11) NOT NULL,
-  `cartel` varchar(250) NOT NULL,
-  `descripcion` varchar(250),
-  `musica` varchar(250),
-  `entrada` datetime,
-  `inicio` datetime,
-  `fin` varchar(250),
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `evento`
---
-
-LOCK TABLES `evento` WRITE;
-/*!40000 ALTER TABLE `evento` DISABLE KEYS */;
-INSERT INTO `evento` (`nombre`, `local_id`, `cartel`, `descripcion`, `musica`, `inicio`, `fin`) VALUES 
-(`nombre`, 22, `cartel`, `descripcion`, `musica`, `inicio`, `fin`);
-
-/* (`nombre`, `local_id`, `portada`, `descripcion`, `musica`, `inicio`, `fin`) */
-
-
 /*!40000 ALTER TABLE `evento` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

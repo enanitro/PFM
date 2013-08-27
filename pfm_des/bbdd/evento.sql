@@ -15,49 +15,6 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
---
--- Table structure for table `local`
---
-
-DROP TABLE IF EXISTS `local`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `local` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(50) NOT NULL,
-  `direccion` varchar(50) NOT NULL,
-  `logo` varchar(250) NOT NULL,
-  `portada` varchar(250) NOT NULL,
-  `latitud` varchar(12) NOT NULL,
-  `longitud` varchar(12) NOT NULL,
-  `descripcion` varchar(250),
-  `horario` varchar(250),
-  `ofertas` varchar(250),
-  `musica` varchar(250),
-  `entrada` varchar(250),
-  `web` varchar(250),
-  `facebook` varchar(250),
-  `twiter` varchar(250),
-  `telefono` varchar(20),
-  `email` varchar(100),
-  `aforo` varchar(20),
-  `tipo` varchar(20),
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `local`
---
-
-LOCK TABLES `local` WRITE;
-/*!40000 ALTER TABLE `local` DISABLE KEYS */;
-INSERT INTO `local` (`nombre`, `direccion`, `logo`, `portada`, `latitud`, `longitud`, `descripcion`, `horario`, `ofertas`, `musica`, `entrada`, `web`, `facebook`, `twiter`, `telefono`, `email`, `aforo`, `tipo`) VALUES 
-(`nombre`, `direccion`, `logo`, `portada`, `latitud`, `longitud`, `descripcion`, `horario`, `ofertas`, `musica`, `entrada`, `web`, `facebook`, `twiter`, `telefono`, `email`, `aforo`, `tipo`);
-
-/* (`nombre`, `direccion`, `logo`, `portada`, `latitud`, `longitud`, `descripcion`, `horario`, `ofertas`, `musica`, `entrada`, `web`, `facebook`, `twiter`, `telefono`, `email`, `aforo`, `tipo`) */
-
-
 
 --
 -- Table structure for table `evento`
@@ -73,9 +30,9 @@ CREATE TABLE `evento` (
   `cartel` varchar(250) NOT NULL,
   `descripcion` varchar(250),
   `musica` varchar(250),
-  `entrada` datetime,
+  `entrada` varchar(250),
   `inicio` datetime,
-  `fin` varchar(250),
+  `fin` datetime,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -86,10 +43,10 @@ CREATE TABLE `evento` (
 
 LOCK TABLES `evento` WRITE;
 /*!40000 ALTER TABLE `evento` DISABLE KEYS */;
-INSERT INTO `evento` (`nombre`, `local_id`, `cartel`, `descripcion`, `musica`, `inicio`, `fin`) VALUES 
-(`nombre`, 22, `cartel`, `descripcion`, `musica`, `inicio`, `fin`);
+INSERT INTO `evento` (`nombre`, `local_id`, `cartel`, `descripcion`, `musica`, `entrada`, `inicio`, `fin`) VALUES 
+("nombre", 22, "cartel", "descripcion", "musica", "entrada", "inicio", "fin");
 
-/* (`nombre`, `local_id`, `portada`, `descripcion`, `musica`, `inicio`, `fin`) */
+/* ("nombre", 22, "cartel", "descripcion", "musica", "entrada", "inicio", "fin") */
 
 
 /*!40000 ALTER TABLE `evento` ENABLE KEYS */;

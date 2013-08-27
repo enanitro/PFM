@@ -1,9 +1,9 @@
 <?php
 include 'config.php';
 
-$sql = "select l.id, l.portada, l.nombre, l.ubicacion, l.latitud, l.longitud, l.descripcion, l.horario, l.ofertas, l.musica, l.web, l.facebook, l.twiter " .
-		"from local l " .
-		"where l.id=:id";
+$sql = "select e.id, e.nombre, e.cartel, e.descripcion, e.entrada, e.inicio, e.musica, e.local_id, l.nombre local, l.portada " . 
+		"from evento e, local l " .
+		"where e.local_id = l.id";
 
 try {
 	$dbh = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);	
@@ -11,9 +11,9 @@ try {
 	$stmt = $dbh->prepare($sql);  
 	$stmt->bindParam("id", $_GET[id]);
 	$stmt->execute();
-	$local = $stmt->fetchObject();  
+	$evento = $stmt->fetchObject();  
 	$dbh = null;
-	echo '{"item":'. json_encode($local) .'}'; 
+	echo '{"item":'. json_encode($evento) .'}'; 
 } catch(PDOException $e) {
 	echo '{"error":{"text":'. $e->getMessage() .'}}'; 
 }

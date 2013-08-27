@@ -2,10 +2,10 @@
 <html>
 <head>
 </head>
-    
+
 <body>
 
-<div id="detailsPage" data-role="page" data-add-back-btn="true">
+<div id="localPage" data-role="page" data-add-back-btn="true" data-back-btn-text="Atras">
 
 	<div data-role="header">
 		<h1>Local</h1>
@@ -13,16 +13,38 @@
 
   <div data-role="content"> 
 
-  	<img id="localImg"/>
-	<div id="localDetails">
-       <h3 id="nombre"></h3>
-   	</div>
-	 
-    <ul id="actionList" data-role="listview" data-inset="true"></ul>
+    <img id="localImg"/>
+
+  	<div id="localDetails">
+
+      <div id="detailsSet" data-role="collapsible-set" >
+
+      </div>
+
+      <div id="links" data-role="collapsible" >
+        <h3>Enlaces</h3>
+          <ul id="linkList" data-role="listview" data-inset="true"></ul>   
+      </div>
+      
+
+    </div>
 
   </div>
 
+  <div data-role="footer" data-id="foo1" data-position="fixed">
+  <div data-role="navbar">
+    <ul>
+      <li><a href="#" class="ui-btn-active ui-state-persist">Locales</a></li>
+      <li><a href="#eventoListPage">Eventos</a></li>
+      <li><a href="#rutaListPage">Rutas</a></li>
+      <li><a href="#mapaPage">Mapa</a></li>
+    </ul>
+  </div><!-- /navbar -->
+  </div>  
+
+
 </div>
+
 
 </body>
 
