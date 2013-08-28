@@ -9,6 +9,28 @@
 	margin-bottom: 8px;
 }
 
-#actionList {
+#localList {
+	clear: both;
+}
+
+
+
+
+#eventoImg {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#eventoNombre {
+	text-align: center;
+}
+
+#eventoDetails p {
+	margin-top: 0px;
+	margin-bottom: 8px;
+}
+
+#eventoList {
 	clear: both;
 }

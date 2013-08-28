@@ -20,7 +20,7 @@
 	</div>
 
 	<div data-role="content">
-         <ul id="localList" data-role="listview" data-filter="true"></ul>
+         <ul id="localList" data-role="listview" data-filter="true" data-filter-placeholder="Buscar..."></ul>
     </div>
 
 	<div data-role="footer" data-id="foo1" data-position="fixed">
@@ -48,7 +48,7 @@
 	</div>
 
 	<div data-role="content">
-         <ul id="eventoList" data-role="listview" data-filter="true"></ul>
+         <ul id="eventoList" data-role="listview" data-filter="true" data-filter-placeholder="Buscar..."></ul>
     </div>
 
     <div data-role="footer" data-id="foo1" data-position="fixed">
@@ -65,6 +65,57 @@
 </div>
 
 
+<!-- Lista de rutas -->
+
+<div id="rutaListPage" data-role="page" >
+
+	<div data-role="header" data-position="fixed">
+		<h1>Rutas</h1>
+	</div>
+
+	<div data-role="content">
+         <ul id="rutaList" data-role="listview" data-filter="true" data-filter-placeholder="Buscar..."></ul>
+    </div>
+
+    <div data-role="footer" data-id="foo1" data-position="fixed">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#localListPage" >Locales</a></li>
+			<li><a href="#eventoListPage" >Eventos</a></li>
+			<li><a href="#rutaListPage" class="ui-btn-active ui-state-persist" >Rutas</a></li>
+			<li><a href="#mapaPage">Mapa</a></li>
+		</ul>
+	</div><!-- /navbar -->
+	</div>	
+
+</div>
+
+
+<!-- Localizaciones -->
+
+<div id="mapaPage" data-role="page" >
+
+	<div data-role="header" data-position="fixed">
+		<h1>Mapa</h1>
+	</div>
+
+	<div data-role="content">
+         
+    </div>
+
+    <div data-role="footer" data-id="foo1" data-position="fixed">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#localListPage" >Locales</a></li>
+			<li><a href="#eventoListPage" >Eventos</a></li>
+			<li><a href="#rutaListPage" >Rutas</a></li>
+			<li><a href="#" class="ui-btn-active ui-state-persist">Mapa</a></li>
+		</ul>
+	</div><!-- /navbar -->
+	</div>	
+
+</div>
+
 
 <script src="js/jquery.js"></script>
 <!-- <script src="js/jquery.mobile-1.0rc1.min.js"></script> -->
@@ -73,6 +124,7 @@
 <script src="js/localdetails.js"></script>
 <script src="js/eventolist.js"></script>
 <script src="js/eventodetails.js"></script>
+<script src="js/marklist.js"></script>
 
 </body>
 

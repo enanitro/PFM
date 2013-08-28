@@ -3,7 +3,7 @@ include 'config.php';
 
 $sql = "select e.id, e.nombre, e.cartel, e.descripcion, e.entrada, e.inicio, e.musica, e.local_id, l.nombre local, l.portada " . 
 		"from evento e, local l " .
-		"where e.local_id = l.id";
+		"where e.id=:id and e.local_id = l.id";
 
 try {
 	$dbh = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);	

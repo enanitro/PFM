@@ -8,10 +8,17 @@ $('#eventoPage').live('pageshow', function(event) {
 function displayEvento(data) {
 	var evento = data.item;
 	console.log(evento);
-	$('#eventoImg').attr('src', 'pics/' + evento.portada);
 
+	if (evento.local_id) {
+		$('#localHref').attr('href', 'localdetails.html?id=' + evento.local_id);		
+	}
+
+	if (evento.portada) {
+		$('#eventoImg').attr('src', 'pics/' + evento.portada);
+	}	
+	
 	if (evento.nombre) {
-		$('#detailsSet').append('<p>' + evento.nombre + '</p>');		
+		$('#detailsSet').append('<center><h2>' + evento.nombre + '</h2></center>');		
 	}
 
 	if (evento.descripcion) {
