@@ -10,7 +10,7 @@ function displayEvento(data) {
 	console.log(evento);
 
 	if (evento.local_id) {
-		$('#localHref').attr('href', 'localdetails.html?id=' + evento.local_id);		
+		$('#localHref').attr('href', 'eventolocaldetails.html?id=' + evento.local_id);		
 	}
 
 	if (evento.portada) {
@@ -43,10 +43,44 @@ function displayEvento(data) {
 
 	if (evento.cartel) {
 		$('#detailsSet').append('<div data-role="collapsible" data-collapsed="true"><h3>Cartel</h3>' + 
-				'<div id="cartel"></div></div>');
-		$('#cartel').attr('src', 'pics/' + evento.cartel);
+				'<img src="pics/' + evento.cartel +' " style="max-height: 100%; max-width: 100%" /></div>');
 	}
 
+
+	if ((evento.latitud) && (evento.longitud)) {
+		//$('#linkList').append('<li><a href="https://maps.google.es/?q=' + evento.latitud + ' ' + evento.longitud + '" target="_new">' +
+		$('#linkList').append('<li><a href="eventomap.html?lat=' + evento.latitud + '&lng=' + evento.longitud + '&n=' + evento.local + '">' +
+			'<img src="icons/maps.png"/>' +
+			'<h3>Mapa</h3>');
+	}
+
+	if ((evento.local_id) && (evento.nombre)) {
+		$('#linkList').append('<li><a href="eventolocaldetails.html?id=' + evento.local_id + '">' +
+			'<img src="pics/' + evento.logo +'"/>' +
+			'<h3>' + evento.local + '</h3>');
+	}
+
+/*
+	if (evento.web) {
+		$('#linkList').append('<li><a href="' + evento.web + '" target="_new">' +
+			'<img src="icons/web3.png"/>' +
+			'<h3>Web</h3>');
+	}
+
+	if (evento.facebook) {
+		$('#linkList').append('<li><a href="' + evento.facebook + '" target="_new">' +
+			'<img src="icons/facebook.png"/>' +
+			'<h3>Facebook</h3>');
+	}
+
+	if (evento.twitter) {
+		$('#linkList').append('<li><a href="' + evento.twitter + '" target="_new">' +
+			'<img src="icons/twitter.png"/>' +
+			'<h3>Twitter</h3>');
+	}
+*/
+
+	$('#linkList').listview('refresh');
 	$('#detailsSet').collapsibleset('refresh');
 
 }

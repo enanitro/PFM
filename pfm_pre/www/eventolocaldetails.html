@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+</head>
+
+<body>
+
+<div id="localPage" data-role="page" data-add-back-btn="true" data-back-btn-text="Atras">
+
+	<div data-role="header">
+		<h1>Local</h1>
+	</div>
+
+  <div data-role="content"> 
+
+    <img id="localImg"/>
+
+  	<div id="localDetails">
+
+      <div id="detailsSet" data-role="collapsible-set" >
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div data-role="footer" data-id="foo1" data-position="fixed">
+  <div id="navbar" data-role="navbar">
+    <ul>
+      <li><a href="#localListPage" >Locales</a></li>
+      <li><a href="#" class="ui-btn-active ui-state-persist" >Eventos</a></li>
+      <li><a href="#rutaListPage">Rutas</a></li>
+      <li><a href="#mapaPage">Mapa</a></li>
+    </ul>
+  </div>
+  </div>  
+
+</div>
+
+<!--
+<script type="text/javascript">
+  $(document).on('click', '[data-role="navbar"] a.ui-btn', function () {
+      $(this).addClass('ui-btn-active-custom ui-state-persist');
+  });
+</script>
+-->
+
+</body>
+
+</html>

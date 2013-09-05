@@ -1,7 +1,7 @@
 <?php
 include 'config.php';
 
-$sql = "select l.id, l.portada, l.nombre, l.ubicacion, l.latitud, l.longitud, l.descripcion, l.horario, l.ofertas, l.musica, l.web, l.facebook, l.twiter " .
+$sql = "select l.id, l.portada, l.nombre, l.direccion, l.latitud, l.longitud, l.descripcion, l.horario, l.ofertas, l.musica, l.web, l.facebook, l.twitter " .
 		"from local l " .
 		"where l.id=:id";
 

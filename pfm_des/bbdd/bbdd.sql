@@ -73,8 +73,8 @@ CREATE TABLE `evento` (
   `cartel` varchar(250) NOT NULL,
   `descripcion` varchar(250),
   `musica` varchar(250),
-  `entrada` datetime,
-  `inicio` datetime,
+  `entrada` varchar(250),
+  `inicio` varchar(250),
   `fin` varchar(250),
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;

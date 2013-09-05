@@ -1,0 +1,44 @@
+#localImg {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#localDetails p {
+	margin-top: 0px;
+	margin-bottom: 8px;
+}
+
+#localList {
+	clear: both;
+}
+
+
+#eventoImg {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#eventoNombre {
+	text-align: center;
+}
+
+#eventoDetails p {
+	margin-top: 0px;
+	margin-bottom: 8px;
+}
+
+#eventoList {
+	clear: both;
+}
+
+
+#rutaDetails p {
+	margin-top: 0px;
+	margin-bottom: 8px;
+}
+
+#rutaList {
+	clear: both;
+}

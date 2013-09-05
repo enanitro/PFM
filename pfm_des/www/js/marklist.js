@@ -1,16 +1,13 @@
 var serviceURL = "http://pfm-jereznoche.hol.es/pfm_des/services/";
 
-var map
+var map;
 
-/*
+
 $('#mapaPage').bind('pageinit', function(event) {
 	getMarkList();
 });
-*/
 
-$('#mapaPage').live('pageshow', function(event) {
-  getMarkList();
-});
+
 
 function getMarkList() {
 
@@ -35,15 +32,22 @@ function getMarkers(lat,lng)
     center : latlng, 
     mapTypeId : google.maps.MapTypeId.ROADMAP 
   };
+
+  //map = new google.maps.Map(document.getElementById("map_canvas"), options);
+
+
   var $content = $("#mapaPage div:jqmData(role=content)");
   $content.height (screen.height - 50);
   map = new google.maps.Map ($content[0], options);
+
+  var image = 'markers/marker1.png'
 
   var marker = new google.maps.Marker ( 
   { 
     map : map, 
     animation : google.maps.Animation.DROP,
-    position : latlng
+    position : latlng,
+    icon : image
   });
 
   var infowindow = new google.maps.InfoWindow({
@@ -61,11 +65,14 @@ function getMarkers(lat,lng)
 
         var latlng = new google.maps.LatLng(mark.latitud, mark.longitud);
 
+        var image = 'markers/glass.png'
+
         var marker = new google.maps.Marker ( 
         { 
           map : map, 
           animation : google.maps.Animation.DROP,
-          position : latlng
+          position : latlng,
+    	  icon : image
         });
 
         var infowindow = new google.maps.InfoWindow({
@@ -77,6 +84,10 @@ function getMarkers(lat,lng)
         });
       });
     });
+
+  var center = map.getCenter();
+  google.maps.event.trigger(map, "resize");
+  map.setCenter(center);
 
 }
 

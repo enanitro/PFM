@@ -12,9 +12,9 @@ function getLocalList() {
 		locales = data.items;
 		$.each(locales, function(index, local) {
 			$('#localList').append('<li><a href="localdetails.html?id=' + local.id + '">' +
-					'<img src="pics/' + local.portada + '"/>' +
+					'<img src="pics/' + local.logo + '"/>' +
 					'<h4>' + local.nombre + '</h4>' +
-					'<p>' + local.ubicacion + '</p> </a></li>');
+					'<p>' + local.direccion + '</p> </a></li>');
 		});
 		$('#localList').listview('refresh');
 	});

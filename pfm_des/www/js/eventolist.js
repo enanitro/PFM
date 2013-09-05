@@ -12,7 +12,7 @@ function getEventoList() {
 		locales = data.items;
 		$.each(locales, function(index, local) {
 			$('#eventoList').append('<li><a href="eventodetails.html?id=' + local.id + '">' +
-					'<img src="pics/' + local.portada + '"/>' +
+					'<img src="pics/' + local.logo + '"/>' +
 					'<h4>' + local.nombre + '</h4>' +
 					'<p>' + local.inicio + '</p> </a></li>');
 		});

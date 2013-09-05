@@ -1,7 +1,7 @@
 <?php
 include 'config.php';
 
-$sql = "select e.id, e.nombre, e.inicio, l.nombre local, l.portada " . 
+$sql = "select e.id, e.nombre, date_format( e.inicio, '%d-%m-%Y %H:%i' ) inicio, l.nombre local, l.logo " . 
 		"from evento e, local l " .
 		"where e.local_id = l.id"; // and e.inicio > now()";
 

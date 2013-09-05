@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Jerez Noche</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<!-- <link rel="stylesheet" href="css/jquery.mobile-1.0rc1.min.css" /> -->
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css">
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+    
+<body>
+        
+
+<!-- Lista de locales -->
+
+<div id="localListPage" data-role="page" >
+
+	<div data-role="header" data-position="fixed">
+		<h1>Locales</h1>
+	</div>
+
+	<div data-role="content">
+         <ul id="localList" data-role="listview" data-filter="true" data-filter-placeholder="Buscar..."></ul>
+    </div>
+
+	<div data-role="footer" data-id="foo1" data-position="fixed">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#" class="ui-btn-active ui-state-persist">Locales</a></li>
+			<li><a href="#eventoListPage">Eventos</a></li>
+			<li><a href="#rutaListPage">Rutas</a></li>
+			<li><a href="#mapaPage">Mapa</a></li>
+		</ul>
+	</div><!-- /navbar -->
+	</div>	
+
+</div>
+
+
+
+
+<!-- Lista de eventos -->
+
+<div id="eventoListPage" data-role="page" >
+
+	<div data-role="header" data-position="fixed">
+		<h1>Eventos</h1>
+	</div>
+
+	<div data-role="content">
+         <ul id="eventoList" data-role="listview" data-filter="true" data-filter-placeholder="Buscar..."></ul>
+    </div>
+
+    <div data-role="footer" data-id="foo1" data-position="fixed">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#localListPage" >Locales</a></li>
+			<li><a href="#" class="ui-btn-active ui-state-persist">Eventos</a></li>
+			<li><a href="#rutaListPage">Rutas</a></li>
+			<li><a href="#mapaPage">Mapa</a></li>
+		</ul>
+	</div><!-- /navbar -->
+	</div>	
+
+</div>
+
+
+<!-- Lista de rutas -->
+
+<div id="rutaListPage" data-role="page" >
+
+	<div data-role="header" data-position="fixed">
+		<h1>Rutas</h1>
+	</div>
+
+	<div data-role="content">
+         <ul id="rutaList" data-role="listview" data-filter="true" data-filter-placeholder="Buscar..."></ul>
+    </div>
+
+    <div data-role="footer" data-id="foo1" data-position="fixed">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#localListPage" >Locales</a></li>
+			<li><a href="#eventoListPage" >Eventos</a></li>
+			<li><a href="#" class="ui-btn-active ui-state-persist" >Rutas</a></li>
+			<li><a href="#mapaPage">Mapa</a></li>
+		</ul>
+	</div><!-- /navbar -->
+	</div>	
+
+</div>
+
+
+<!-- Localizaciones -->
+
+<div id="mapaPage" data-role="page" >
+
+	<div data-role="header" data-position="fixed">
+		<h1>Mapa</h1>
+	</div>
+
+	<div data-role="content">
+         <div id="map_canvas" ></div>
+    </div>
+
+    <div data-role="footer" data-id="foo1" data-position="fixed">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#localListPage" >Locales</a></li>
+			<li><a href="#eventoListPage" >Eventos</a></li>
+			<li><a href="#rutaListPage" >Rutas</a></li>
+			<li><a href="#" class="ui-btn-active ui-state-persist">Mapa</a></li>
+		</ul>
+	</div><!-- /navbar -->
+	</div>	
+
+</div>
+
+
+<script src="js/jquery.js"></script>
+<!-- <script src="js/jquery.mobile-1.0rc1.min.js"></script> -->
+<script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+<script src="js/locallist.js"></script>
+<script src="js/localdetails.js"></script>
+<script src="js/eventolist.js"></script>
+<script src="js/eventodetails.js"></script>
+<script src="js/rutadetails.js"></script>
+<script src="js/rutalist.js"></script>
+<script src="js/marklist.js"></script>
+<script src="js/localmark.js"></script>
+<script src="js/eventomark.js"></script>
+<script src="js/rutamark.js"></script>
+<script src=http://maps.googleapis.com/maps/api/js?sensor=true></script> 
+
+</body>
+
+</html>

@@ -1,7 +1,8 @@
 <?php
 include 'config.php';
 
-$sql = "select e.id, e.nombre, e.cartel, e.descripcion, e.entrada, e.inicio, e.musica, e.local_id, l.nombre local, l.portada " . 
+$sql = "select e.id, e.nombre, e.cartel, e.descripcion, e.entrada, e.inicio, e.musica, " .
+		"e.local_id, l.nombre local, l.logo, l.portada, l.latitud, l.longitud " . 
 		"from evento e, local l " .
 		"where e.id=:id and e.local_id = l.id";
 
