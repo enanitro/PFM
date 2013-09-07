@@ -14,7 +14,7 @@ function displayEvento(data) {
 	}
 
 	if (evento.portada) {
-		$('#eventoImg').attr('src', 'pics/' + evento.portada);
+		$('#eventoImg').attr('src', 'img/portadas/' + evento.portada);
 	}	
 	
 	if (evento.nombre) {
@@ -43,39 +43,39 @@ function displayEvento(data) {
 
 	if (evento.cartel) {
 		$('#detailsSet').append('<div data-role="collapsible" data-collapsed="true"><h3>Cartel</h3>' + 
-				'<img src="pics/' + evento.cartel +' " style="max-height: 100%; max-width: 100%" /></div>');
+				'<center><img src="img/carteles/' + evento.cartel +' " style="max-height: 100%; max-width: 100%" /></center></div>');
 	}
 
 
 	if ((evento.latitud) && (evento.longitud)) {
 		//$('#linkList').append('<li><a href="https://maps.google.es/?q=' + evento.latitud + ' ' + evento.longitud + '" target="_new">' +
 		$('#linkList').append('<li><a href="eventomap.html?lat=' + evento.latitud + '&lng=' + evento.longitud + '&n=' + evento.local + '">' +
-			'<img src="icons/maps.png"/>' +
+			'<img src="img/icons/maps.png"/>' +
 			'<h3>Mapa</h3>');
 	}
 
 	if ((evento.local_id) && (evento.nombre)) {
 		$('#linkList').append('<li><a href="eventolocaldetails.html?id=' + evento.local_id + '">' +
-			'<img src="pics/' + evento.logo +'"/>' +
+			'<img src="img/logos/' + evento.logo +'"/>' +
 			'<h3>' + evento.local + '</h3>');
 	}
 
 /*
 	if (evento.web) {
 		$('#linkList').append('<li><a href="' + evento.web + '" target="_new">' +
-			'<img src="icons/web3.png"/>' +
+			'<img src="img/icons/web3.png"/>' +
 			'<h3>Web</h3>');
 	}
 
 	if (evento.facebook) {
 		$('#linkList').append('<li><a href="' + evento.facebook + '" target="_new">' +
-			'<img src="icons/facebook.png"/>' +
+			'<img src="img/icons/facebook.png"/>' +
 			'<h3>Facebook</h3>');
 	}
 
 	if (evento.twitter) {
 		$('#linkList').append('<li><a href="' + evento.twitter + '" target="_new">' +
-			'<img src="icons/twitter.png"/>' +
+			'<img src="img/icons/twitter.png"/>' +
 			'<h3>Twitter</h3>');
 	}
 */
@@ -85,14 +85,3 @@ function displayEvento(data) {
 
 }
 
-function getUrlVars() {
-    var vars = [], hash;
-    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-    for(var i = 0; i < hashes.length; i++)
-    {
-        hash = hashes[i].split('=');
-        vars.push(hash[0]);
-        vars[hash[0]] = hash[1];
-    }
-    return vars;
-}

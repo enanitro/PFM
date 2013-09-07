@@ -1,5 +1,3 @@
-var serviceURL = "http://pfm-jereznoche.hol.es/pfm_des/services/";
-
 var map;
 var latitud;
 var longitud;
@@ -10,12 +8,12 @@ $('#eventoMapaPage').live('pageshow', function(event) {
   latitud = getUrlVars()["lat"];
   longitud = getUrlVars()["lng"];
   evento_nombre = getUrlVars()["n"];
-	getMarkList();
+	getEventoMarkList();
 });
 
 
 
-function getMarkList() {
+function getEventoMarkList() {
 
 
 	navigator.geolocation.getCurrentPosition (function (pos)
@@ -23,13 +21,13 @@ function getMarkList() {
   		var lat = pos.coords.latitude;
   		var lng = pos.coords.longitude;
 
-  		getMarkers(lat,lng);
+  		getEventoMarkers(lat,lng);
 	});
 
  
 }
 
-function getMarkers(lat,lng)
+function getEventoMarkers(lat,lng)
 {
 
   // creacion del mapa y centrado en la ubicacion del evento
@@ -49,7 +47,7 @@ function getMarkers(lat,lng)
   //marcador de la ubicacion del usuario
   var latlng = new google.maps.LatLng (lat,lng);
 
-  var image = 'markers/marker1.png'
+  var image = 'img/markers/marker1.png'
 
   var marker = new google.maps.Marker ( 
   { 
@@ -71,7 +69,7 @@ function getMarkers(lat,lng)
   // marcador con la ubicacion del evento
   //var evento_latlng = new google.maps.LatLng(latitud, longitud);
 
-  var evento_image = 'markers/glass.png'
+  var evento_image = 'img/markers/glass.png'
 
   var evento_marker = new google.maps.Marker ( 
   { 
@@ -96,16 +94,4 @@ function getMarkers(lat,lng)
 
 }
 
-
-function getUrlVars() {
-    var vars = [], hash;
-    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-    for(var i = 0; i < hashes.length; i++)
-    {
-        hash = hashes[i].split('=');
-        vars.push(hash[0]);
-        vars[hash[0]] = hash[1];
-    }
-    return vars;
-}
 

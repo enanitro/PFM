@@ -1,15 +1,13 @@
-var serviceURL = "http://pfm-jereznoche.hol.es/pfm_des/services/";
-
 var map;
 
 
 $('#rutaMapaPage').live('pageshow', function(event) {
-	getMarkList();
+	getRutaMarkList();
 });
 
 
 
-function getMarkList() {
+function getRutaMarkList() {
 
 
 	navigator.geolocation.getCurrentPosition (function (pos)
@@ -17,13 +15,13 @@ function getMarkList() {
   		var lat = pos.coords.latitude;
   		var lng = pos.coords.longitude;
 
-  		getMarkers(lat,lng);
+  		getRutaMarkers(lat,lng);
 	});
 
  
 }
 
-function getMarkers(lat,lng)
+function getRutaMarkers(lat,lng)
 {	
 
   // markers para la ubicacion de los locales
@@ -54,7 +52,7 @@ function getMarkers(lat,lng)
         // creamos el marker
         var latlng = new google.maps.LatLng(mark.latitud, mark.longitud);
 
-        var image = 'markers/red' + i + '.png' //'markers/glass.png'
+        var image = 'img/markers/red' + i + '.png' //'markers/glass.png'
 
         var marker = new google.maps.Marker ( 
         { 
@@ -79,7 +77,7 @@ function getMarkers(lat,lng)
       // marker para la ubicacion del usuario
       var latlng = new google.maps.LatLng (lat, lng);
 
-      var image = 'markers/marker1.png'
+      var image = 'img/markers/marker1.png'
 
       var marker = new google.maps.Marker ( 
       { 
@@ -105,22 +103,5 @@ function getMarkers(lat,lng)
   
     });
 
-
-  
-
-}
-
-
-
-function getUrlVars() {
-    var vars = [], hash;
-    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-    for(var i = 0; i < hashes.length; i++)
-    {
-        hash = hashes[i].split('=');
-        vars.push(hash[0]);
-        vars[hash[0]] = hash[1];
-    }
-    return vars;
 }
 

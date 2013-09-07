@@ -1,5 +1,3 @@
-var serviceURL = "http://pfm-jereznoche.hol.es/pfm_des/services/";
-
 var map;
 
 
@@ -40,7 +38,7 @@ function getMarkers(lat,lng)
   $content.height (screen.height - 50);
   map = new google.maps.Map ($content[0], options);
 
-  var image = 'markers/marker1.png'
+  var image = 'img/markers/marker1.png'
 
   var marker = new google.maps.Marker ( 
   { 
@@ -65,7 +63,7 @@ function getMarkers(lat,lng)
 
         var latlng = new google.maps.LatLng(mark.latitud, mark.longitud);
 
-        var image = 'markers/glass.png'
+        var image = 'img/markers/glass.png'
 
         var marker = new google.maps.Marker ( 
         { 

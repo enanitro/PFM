@@ -1,28 +1,63 @@
--- MySQL dump 10.13  Distrib 5.5.15, for osx10.6 (i386)
+
+-- phpMyAdmin SQL Dump
+-- version 3.5.2.2
+-- http://www.phpmyadmin.net
 --
--- Host: localhost    Database: directory
--- ------------------------------------------------------
--- Server version	5.5.15
+-- Servidor: localhost
+-- Tiempo de generación: 05-09-2013 a las 14:30:32
+-- Versión del servidor: 5.1.69
+-- Versión de PHP: 5.2.17
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `local`
+-- Base de datos: `u540071968_des`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `evento`
+--
+
+DROP TABLE IF EXISTS `evento`;
+CREATE TABLE IF NOT EXISTS `evento` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(50) NOT NULL,
+  `local_id` int(11) NOT NULL,
+  `cartel` varchar(250) NOT NULL,
+  `descripcion` varchar(250) DEFAULT NULL,
+  `musica` varchar(250) DEFAULT NULL,
+  `entrada` varchar(250) DEFAULT NULL,
+  `inicio` datetime DEFAULT NULL,
+  `fin` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
+
+--
+-- Volcado de datos para la tabla `evento`
+--
+
+INSERT INTO `evento` (`id`, `nombre`, `local_id`, `cartel`, `descripcion`, `musica`, `entrada`, `inicio`, `fin`) VALUES
+(22, 'nombre', 22, 'portada.png', 'descripcion', 'musica', NULL, '2013-10-02 00:00:00', '2013-10-02 06:00:00'),
+(23, 'nombre', 22, 'portada.png', 'descripcion', 'musica', NULL, '2013-10-01 22:00:00', '2013-10-02 02:00:00'),
+(24, 'nombre', 22, 'cartel.jpg', 'descripcion', 'musica', 'entrada', '2013-10-01 22:00:00', '2013-10-02 02:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `local`
 --
 
 DROP TABLE IF EXISTS `local`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `local` (
+CREATE TABLE IF NOT EXISTS `local` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(50) NOT NULL,
   `direccion` varchar(50) NOT NULL,
@@ -30,78 +65,75 @@ CREATE TABLE `local` (
   `portada` varchar(250) NOT NULL,
   `latitud` varchar(12) NOT NULL,
   `longitud` varchar(12) NOT NULL,
-  `descripcion` varchar(250),
-  `horario` varchar(250),
-  `ofertas` varchar(250),
-  `musica` varchar(250),
-  `entrada` varchar(250),
-  `web` varchar(250),
-  `facebook` varchar(250),
-  `twiter` varchar(250),
-  `telefono` varchar(20),
-  `email` varchar(100),
-  `aforo` varchar(20),
-  `tipo` varchar(20),
+  `descripcion` varchar(250) DEFAULT NULL,
+  `horario` varchar(250) DEFAULT NULL,
+  `ofertas` varchar(250) DEFAULT NULL,
+  `musica` varchar(250) DEFAULT NULL,
+  `entrada` varchar(250) DEFAULT NULL,
+  `web` varchar(250) DEFAULT NULL,
+  `facebook` varchar(250) DEFAULT NULL,
+  `twitter` varchar(250) DEFAULT NULL,
+  `telefono` varchar(20) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `aforo` varchar(20) DEFAULT NULL,
+  `tipo` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
 
 --
--- Dumping data for table `local`
+-- Volcado de datos para la tabla `local`
 --
 
-LOCK TABLES `local` WRITE;
-/*!40000 ALTER TABLE `local` DISABLE KEYS */;
-INSERT INTO `local` (`nombre`, `direccion`, `logo`, `portada`, `latitud`, `longitud`, `descripcion`, `horario`, `ofertas`, `musica`, `entrada`, `web`, `facebook`, `twiter`, `telefono`, `email`, `aforo`, `tipo`) VALUES 
-(`nombre`, `direccion`, `logo`, `portada`, `latitud`, `longitud`, `descripcion`, `horario`, `ofertas`, `musica`, `entrada`, `web`, `facebook`, `twiter`, `telefono`, `email`, `aforo`, `tipo`);
+INSERT INTO `local` (`id`, `nombre`, `direccion`, `logo`, `portada`, `latitud`, `longitud`, `descripcion`, `horario`, `ofertas`, `musica`, `entrada`, `web`, `facebook`, `twitter`, `telefono`, `email`, `aforo`, `tipo`) VALUES
+(22, 'local1', 'direccion', 'blue_monkey.png', 'bereber.png', '36.681584', '-6.13797', 'descripcion', 'horario', 'ofertas', 'musica', 'entrada', 'web', 'facebook', 'twitter', 'telefono', 'email', 'aforo', 'tipo'),
+(23, 'local2', 'direccion', 'oxi.png', 'bereber.png', '36.683305', '-6.138679', 'descripcion', 'horario', 'ofertas', 'musica', NULL, 'http://www.google.es', 'http://www.google.es', 'http://www.google.es', 'telefono', 'email', 'aforo', 'tipo');
 
-/* (`nombre`, `direccion`, `logo`, `portada`, `latitud`, `longitud`, `descripcion`, `horario`, `ofertas`, `musica`, `entrada`, `web`, `facebook`, `twiter`, `telefono`, `email`, `aforo`, `tipo`) */
-
-
+-- --------------------------------------------------------
 
 --
--- Table structure for table `evento`
+-- Estructura de tabla para la tabla `ruta`
 --
 
-DROP TABLE IF EXISTS `evento`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `evento` (
+DROP TABLE IF EXISTS `ruta`;
+CREATE TABLE IF NOT EXISTS `ruta` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(50) NOT NULL,
-  `local_id` int(11) NOT NULL,
-  `cartel` varchar(250) NOT NULL,
-  `descripcion` varchar(250),
-  `musica` varchar(250),
-  `entrada` varchar(250),
-  `inicio` varchar(250),
-  `fin` varchar(250),
+  `fecha` datetime NOT NULL,
+  `portada` varchar(250) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=23 ;
 
 --
--- Dumping data for table `evento`
+-- Volcado de datos para la tabla `ruta`
 --
 
-LOCK TABLES `evento` WRITE;
-/*!40000 ALTER TABLE `evento` DISABLE KEYS */;
-INSERT INTO `evento` (`nombre`, `local_id`, `cartel`, `descripcion`, `musica`, `inicio`, `fin`) VALUES 
-(`nombre`, 22, `cartel`, `descripcion`, `musica`, `inicio`, `fin`);
+INSERT INTO `ruta` (`id`, `nombre`, `fecha`, `portada`) VALUES
+(22, 'Zona Centro', '2013-10-01 00:00:00','portada.png');
 
-/* (`nombre`, `local_id`, `portada`, `descripcion`, `musica`, `inicio`, `fin`) */
+-- --------------------------------------------------------
 
+--
+-- Estructura de tabla para la tabla `ruta_local`
+--
 
-/*!40000 ALTER TABLE `evento` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+DROP TABLE IF EXISTS `ruta_local`;
+CREATE TABLE IF NOT EXISTS `ruta_local` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ruta_id` int(11) NOT NULL,
+  `local_id` int(11) NOT NULL,
+  `posicion` int(11) NOT NULL,
+  `descripcion` varchar(250) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+--
+-- Volcado de datos para la tabla `ruta_local`
+--
+
+INSERT INTO `ruta_local` (`id`, `ruta_id`, `local_id`, `posicion`, `descripcion`) VALUES
+(22, 22, 22, 1, 'descripcion'),
+(23, 22, 23, 2, 'descripcion');
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2011-10-11 12:46:10

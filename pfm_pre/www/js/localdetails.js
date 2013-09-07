@@ -10,7 +10,7 @@ $('#localPage').live('pageshow', function(event) {
 function displayLocal(data) {
 	var local = data.item;
 
-	$('#localImg').attr('src', 'pics/' + local.portada);
+	$('#localImg').attr('src', 'img/portadas/' + local.portada);
 
 
 	if (local.descripcion) {
@@ -42,25 +42,25 @@ function displayLocal(data) {
 	if (local.direccion) {
 		//$('#linkList').append('<li><a href="https://maps.google.es/?q=' + local.latitud + ' ' + local.longitud + '" target="_new">' +
 		$('#linkList').append('<li><a href="localmap.html?lat=' + local.latitud + '&lng=' + local.longitud + '&n=' + local.nombre + '">' +
-			'<img src="icons/maps.png"/>' +
+			'<img src="img/icons/maps.png"/>' +
 			'<h3>Mapa</h3>');
 	}
 
 	if (local.web) {
 		$('#linkList').append('<li><a href="' + local.web + '" target="_new">' +
-			'<img src="icons/web3.png"/>' +
+			'<img src="img/icons/web3.png"/>' +
 			'<h3>Web</h3>');
 	}
 
 	if (local.facebook) {
 		$('#linkList').append('<li><a href="' + local.facebook + '" target="_new">' +
-			'<img src="icons/facebook.png"/>' +
+			'<img src="img/icons/facebook.png"/>' +
 			'<h3>Facebook</h3>');
 	}
 
 	if (local.twitter) {
 		$('#linkList').append('<li><a href="' + local.twitter + '" target="_new">' +
-			'<img src="icons/twitter.png"/>' +
+			'<img src="img/icons/twitter.png"/>' +
 			'<h3>Twitter</h3>');
 	}
 
@@ -68,18 +68,6 @@ function displayLocal(data) {
 	$('#linkList').listview('refresh');
 	$('#detailsSet').collapsibleset('refresh');
 	
-}
-
-function getUrlVars() {
-    var vars = [], hash;
-    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-    for(var i = 0; i < hashes.length; i++)
-    {
-        hash = hashes[i].split('=');
-        vars.push(hash[0]);
-        vars[hash[0]] = hash[1];
-    }
-    return vars;
 }
 
 function displayEventos(data){

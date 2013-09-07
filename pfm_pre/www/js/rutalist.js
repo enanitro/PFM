@@ -1,5 +1,3 @@
-var serviceURL = "http://pfm-jereznoche.hol.es/pfm_des/services/";
-
 var rutas;
 
 $('#rutaListPage').bind('pageinit', function(event) {
@@ -12,7 +10,7 @@ function getRutaList() {
 		rutas = data.items;
 		$.each(rutas, function(index, ruta) {
 			$('#rutaList').append('<li><a href="rutadetails.html?id=' + ruta.id + '">' +
-					'<img src="pics/' + 'portada.png' + '"/>' +
+					'<img src="img/rutas/' + ruta.portada + '"/>' +
 					'<h4>' + ruta.nombre + '</h4>' +
 					'<p>' + ruta.fecha + '</p> </a></li>');
 		});
